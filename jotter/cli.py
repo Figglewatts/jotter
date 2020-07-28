@@ -40,10 +40,11 @@ def set_remote(remote_url: str) -> None:
 
 
 @jotter.command()
-@click.argument("NOTE_FILE", required=True, type=str)
-def note(note_file: str) -> None:
+@click.argument("NOTE_FILE", required=False, type=str)
+@click.option("-d", "--date", is_flag=True)
+def note(note_file: Optional[str], date: bool) -> None:
     """Create or edit a jotter note."""
-    note_cmd.run(note_file)
+    note_cmd.run(note_file, date)
 
 
 @jotter.command()

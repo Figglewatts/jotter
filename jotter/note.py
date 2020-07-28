@@ -5,27 +5,43 @@ Functionality for the jotter note command.
 Author:
     Figglewatts <me@figglewatts.co.uk>
 """
+from datetime import datetime
 from os import path
 import subprocess
+from typing import Optional
 
 import git
 
 from jotter import util, project
 
 
-def run(note_filename: str) -> None:
+def run(note_filename: Optional[str], date: bool) -> None:
     """Run the note command.
 
     Args:
-        project: The jotter project.
         note_filename: The filename of the note.
+        date: Prepend a date to the given filename.
     """
+    if not note_filename and not date:
+        print(
+            "You need to specify a note filename to create a note. "
+            "You can also specify --date to make the filename the current date."
+        )
+        raise SystemExit(1)
+
     if not util.jotter_project_exists():
         print(
             "Unable to create note, the current folder is not a jotter project."
         )
         raise SystemExit(1)
     proj = project.load(project.PROJECT_FILENAME)
+
+    if not note_filename:
+        note_filename = ""
+
+    if date:
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        note_filename = f"{date_str}{note_filename}"
 
     # if note doesn't have file extension, add the one specified in project
     if "." not in note_filename:
