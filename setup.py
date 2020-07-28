@@ -19,7 +19,7 @@ def get_repo_file_content(filename: str) -> str:
 
 setup(
     name="jotter",
-    version="0.1.0",
+    version="0.1.1",
     description="Note taking and syncing utility.",
     long_description=get_repo_file_content("README.md"),
     long_description_content_type="text/markdown",

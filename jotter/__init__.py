@@ -6,4 +6,4 @@ Author:
     Figglewatts <me@figglewatts.co.uk>
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
