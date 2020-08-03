@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jotter"
-version = "0.1.1"
+version = "0.1.2"
 description = "Note taking and syncing utility."
 authors = ["Figglewatts <figglewatts@hotmail.co.uk>"]
 license = "MIT"

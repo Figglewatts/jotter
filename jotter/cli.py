@@ -53,7 +53,7 @@ def sync() -> None:
     sync_cmd.run()
 
 
-def main() -> None:
+def main():
     jotter()
 
 
