@@ -37,6 +37,6 @@ setup(
     """,
     python_requires=">=3.7",
     install_requires=[
-        "click~=7.1.2", "appdirs~=1.4.4", "marshmallow~=3.7.1", "pyyaml~=5.3.1"
+        "click~=7.1.2", "appdirs~=1.4.4", "marshmallow~=3.7.1", "pyyaml>=5.3.1,<5.5.0"
     ],
 )
